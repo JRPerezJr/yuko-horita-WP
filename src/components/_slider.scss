@@ -1,0 +1,43 @@
+@use "../abstracts/mixins";
+
+.main__portfolio {
+  padding: 2rem 5%;
+  grid-column: 1/-1;
+
+  @include mixins.mq(medium) {
+    padding: 4rem 10%;
+  }
+  &--container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    @include mixins.mq(medium) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      gap: 2rem;
+    }
+  }
+  &--title {
+    margin-bottom: 2rem;
+
+    @include mixins.mq(medium) {
+      margin-bottom: 4rem;
+    }
+  }
+  &--item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  & img {
+    object-fit: scale-down;
+  }
+  & span {
+    margin-top: 1rem;
+    display: inline-block;
+    font-weight: 500;
+  }
+}
